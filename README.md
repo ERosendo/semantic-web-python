@@ -51,7 +51,7 @@ graph = Graph()
 ```
 
 
-Luego de crear el grafo que se utilizará como base, debemos definir el **namespace** para las propiedades de la representacion. Para esto, importamos la clase `Namespace` y creamos una instancia con la URI:**http://www.kingstv.com/tv_property/**, para añadirla al grafo utilizamo el metodo `bind` de la clase Graph como se muestra a continuacion:
+Luego de crear el grafo que se utilizará como base, debemos definir el **namespace** para las propiedades de la representacion. Para esto, importamos la clase `Namespace`, creamos una instancia con la URI:**http://www.kingstv.com/tv_property/** y utilizamos el metodo `bind` de la clase `Graph` para añadirla al grafo, como se muestra a continuacion:
 
 
 ```python
@@ -84,4 +84,19 @@ from rdflib import Graph, Namespace, URIRef
 """ Create literals"""
 name = Literal("PSM2000")
 detail = Literal("This is a plasma TV.")
+```
+
+Ahora solo debemos añadir los tripletes definidos en la tabla de este ejemplo. Para esta tarea, utilizamos el metodo `add` disponible en la instancia de la clase `Graph`, como se muestra a continuacion:
+
+```python
+""" Create triples"""
+graph.add((psm2000, tv.model, name));
+graph.add((psm2000, tv.detail, detail));
+graph.add((psm2000, tv.user, user1));
+```
+
+Finalmente, podemos imprimir la representacion del grafo utilizando distintos formatos de serializacion (se puede consultar la lista en este [enlace](https://rdflib.readthedocs.io/en/stable/plugin_serializers.html)). Para este ejemplo usaremos el formato RDF/XML:
+
+```python
+print(graph.serialize(format='xml'))
 ```
