@@ -39,7 +39,7 @@ N--->|tv:detail|H[This is a plasma TV.];
 
 En la representación anterior se ha utilizado el prefijo `tv` para reemplazar parte de la URI utilizada en los predicados del grafico con la intencion de reducir el espacio ocupado por la representacion.
 
-Para representar la informacion mostrada anteriormente utilizando codigo, lo primero que debemos hacer es crear un grafo vacío haciendo uso de la clase Graph como se muestra a continuacion:
+Para representar la informacion mostrada anteriormente utilizando codigo, lo primero que debemos hacer es crear un grafo vacío haciendo uso de la clase `Graph` como se muestra a continuacion:
 
 
 ```python
