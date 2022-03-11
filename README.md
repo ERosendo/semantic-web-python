@@ -17,7 +17,8 @@ pip install rdflib
 
 ### 2. Ejemplo 1
 
-Durante este tutorial se utilizara un televisor como recurso. La URI utilizada para referirnos a este elemento es `http://www.kingstv.com/plasma/PSM2000`. Para este recurso, se tomara el nombre, detalles y la persona que usa el dispositivo como sus propiedades. Esta situacion se puede resumir en la siguiente tabla:
+Durante este tutorial se utilizará un televisor como recurso. La URI utilizada para referirnos a este elemento es `http://www.kingstv.com/plasma/PSM2000`. Para este recurso, se tomará el nombre, detalles y la persona que usa el dispositivo como sus propiedades. Esta situación se puede resumir en la siguiente tabla:
+
 
 | Sujeto | Predicado | Objecto |
 | -------| --------  | ------- |
