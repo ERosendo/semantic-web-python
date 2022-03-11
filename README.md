@@ -36,3 +36,5 @@ N((http://www.kingstv.com/plasma/PSM2000))--->|tv:model|P[PSM2000];
 N--->|tv:user|G((http://www.kingstv.com/user/1));
 N--->|tv:detail|H[This is a plasma TV.];
 ```
+
+En la representación anterior se ha utilizado el prefijo `tv` para reemplazar parte de la URI utilizada en los predicados del grafico con la intencion de reducir el espacio ocupado por la representacion.
