@@ -38,3 +38,50 @@ N--->|tv:detail|H[This is a plasma TV.];
 ```
 
 En la representación anterior se ha utilizado el prefijo `tv` para reemplazar parte de la URI utilizada en los predicados del grafico con la intencion de reducir el espacio ocupado por la representacion.
+
+Para representar la informacion mostrada anteriormente utilizando codigo, lo primero que debemos hacer es crear un grafo vacío haciendo uso de la clase Graph como se muestra a continuacion:
+
+
+```python
+from rdflib import Graph
+
+""" Create a base Graph """
+
+graph = Graph()
+```
+
+
+Luego de crear el grafo que se utilizará como base, debemos definir el **namespace** para las propiedades de la representacion. Para esto, importamos la clase `Namespace` y creamos una instancia con la URI:**http://www.kingstv.com/tv_property/**, para añadirla al grafo utilizamo el metodo `bind` de la clase Graph como se muestra a continuacion:
+
+
+```python
+from rdflib import Graph, Namespace
+...
+
+""" Create an Prefix to use for predicate in triples """
+tv = Namespace("http://www.kingstv.com/tv_property/")
+graph.bind("tv", tv)
+```
+
+
+Ahora se pueden definir los recursos con su propia URI utilizando la clase `URIRef` como se muestra a continuacion:
+
+
+```python
+from rdflib import Graph, Namespace, URIRef
+...
+
+""" Create an RDF node to use as the subject for triples """
+psm2000 = URIRef("http://www.kingstv.com/plasma/PSM2000")
+user1 = URIRef("http://www.kingstv.com/user/1")
+```
+Ademas, se pueden referir aquellos objetos que estan representados por literales. Para esto importamos la clase `Literal` y la usamos como se muestra a continuacion:
+
+
+```python
+from rdflib import Graph, Namespace, URIRef
+...
+""" Create literals"""
+name = Literal("PSM2000")
+detail = Literal("This is a plasma TV.")
+```
